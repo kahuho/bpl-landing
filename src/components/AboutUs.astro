@@ -1,0 +1,134 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import AboutUsImage from "../assets/about.jpg";
+---
+
+<section id="about" class="py-16 bg-cream">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-8 text-center">About Us</h2>
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2 relative">
+        <div class="circle-container">
+          <div class="green-semicircle"></div>
+          <div class="gold-circle">
+            <Image
+              src={AboutUsImage}
+              alt="About EquiSave"
+              class="circle-image"
+              width={500} 
+              height={500}
+            />
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 content-container">
+        <p class="text-lg text-gray-700 mb-4">
+          EquiSave is a pioneering digital platform dedicated to solving Kenya's financial distress challenges. We connect distressed borrowers, creditors, and investors in a seamless ecosystem where everyone benefits.
+        </p>
+        <p class="text-lg text-gray-700">
+          With a transparent and efficient approach, we're reimagining asset recovery to create financial stability and unlock new opportunities for growth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Background color */
+  .bg-cream {
+    background-color: #f8f4d9; /* Light cream background */
+  }
+  
+  /* Text colors */
+  .text-dark-green {
+    color: #1a472a; /* Dark green text */
+  }
+  
+  /* Circle styling */
+  .circle-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+  
+  /* Green semicircle on the left */
+  .green-semicircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #1a472a; /* Dark green */
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    z-index: 1;
+  }
+  
+  /* Gold circle with white interior */
+  .gold-circle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 15px solid #e6d69c; /* Gold/cream border */
+    background-color: white;
+    overflow: hidden; /* Ensures the image is clipped to the circle */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Image styling */
+  .circle-image {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  /* Content styling */
+  .content-container {
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .circle-container {
+      width: 280px;
+      height: 280px;
+      margin-bottom: 2rem;
+    }
+    
+    .gold-circle {
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-width: 10px;
+    }
+    
+    .content-container {
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .circle-container {
+      width: 240px;
+      height: 240px;
+    }
+    
+    .gold-circle {
+      border-width: 8px;
+    }
+    
+    h2 {
+      font-size: 2.5rem !important;
+    }
+  }
+</style>

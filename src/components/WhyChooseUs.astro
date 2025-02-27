@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import WhyUsImage from "../assets/how-we-work.jpg";
+---
+<section class="py-16 bg-gradient-to-b from-gray-200 to-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl md:text-6xl font-bold text-primary mb-12 text-center">WHY CHOOSE US?</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <Image
+              src={WhyUsImage}
+              alt="About EquiSave"
+            />
+        </div>
+        <div class="md:w-1/2 space-y-8">
+          <div class="bg-primary text-white p-6 rounded-lg shadow-lg relative overflow-hidden transform transition-all duration-300 hover:scale-105">
+            <div class="absolute left-8 top-1/2 -translate-y-1/2 bg-yellow-300 text-primary rounded-full w-12 h-12 flex items-center justify-center font-bold text-2xl">1</div>
+            <div class="ml-16">
+              <h3 class="text-xl font-semibold mb-2">FOR BORROWERS</h3>
+              <p>Avoid financial losses by selling your assets at fair prices while retaining dignity and equity.</p>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-300 text-primary p-6 rounded-lg shadow-lg relative overflow-hidden transform transition-all duration-300 hover:scale-105">
+            <div class="absolute left-8 top-1/2 -translate-y-1/2 bg-yellow-300 text-primary border-2 border-primary rounded-full w-12 h-12 flex items-center justify-center font-bold text-2xl">2</div>
+            <div class="ml-16">
+              <h3 class="text-xl font-semibold mb-2">FOR INVESTORS</h3>
+              <p>Access verified, discounted assets for secure investments.</p>
+            </div>
+          </div>
+          
+          <div class="bg-primary text-white p-6 rounded-lg shadow-lg relative overflow-hidden transform transition-all duration-300 hover:scale-105">
+            <div class="absolute left-8 top-1/2 -translate-y-1/2 bg-yellow-300 text-primary rounded-full w-12 h-12 flex items-center justify-center font-bold text-2xl">3</div>
+            <div class="ml-16">
+              <h3 class="text-xl font-semibold mb-2">FOR CREDITORS</h3>
+              <p>Streamline loan recovery and maintain relationships with borrowers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<style>
+  /* Define primary and secondary colors to match the image */
+  :root {
+    --color-primary: #0F3E27;
+    --color-secondary: #E5D294;
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary, .bg-yellow-300 {
+    background-color: var(--color-secondary);
+  }
+
+  /* Add subtle background texture */
+  section {
+    background-image: linear-gradient(to bottom, #e2e8e5, #d8e0db);
+  }
+
+  /* Make cards pop with depth */
+  .rounded-lg {
+    border-radius: 0.75rem;
+  }
+
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Make the section heading stand out */
+  h2 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+</style>

@@ -1,0 +1,138 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import ForBorrowerImage from "../assets/borrower.jpg";
+---
+
+<section id="borrowers" class="py-16 bg-cream">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <div class="circle-container">
+          <div class="green-semicircle"></div>
+          <div class="gold-circle">
+            <Image
+              src={ForBorrowerImage}
+              alt="Person carrying loan burden"
+              class="circle-image"
+              width={500}
+              height={500} 
+            />
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 content-container">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-green mb-8">
+          FOR BORROWERS
+        </h2>
+        <p class="text-lg text-gray-800">
+          EquiSave offers a lifeline to borrowers facing financial distress. By
+          listing your collateral on our platform, you can avoid the loss and
+          stigma associated with public auctions. Retain financial dignity,
+          recover partial equity, and find fair offers directly from investors.
+          Say goodbye to complete financial losses and take the first step
+          toward financial recovery with EquiSave.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Background color */
+  .bg-cream {
+    background-color: #f8f4d9;
+  }
+
+  /* Text colors */
+  .text-dark-green {
+    color: #1a472a;
+  }
+
+  /* Circle styling */
+  .circle-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+
+  /* Green semicircle on the left */
+  .green-semicircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #1a472a; /* Dark green */
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    z-index: 1;
+  }
+
+  /* Gold circle with white interior */
+  .gold-circle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 15px solid #e6d69c; /* Gold/cream border */
+    background-color: white;
+    overflow: hidden; /* Ensures the image is clipped to the circle */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image styling */
+  .circle-image {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+
+  /* Content styling */
+  .content-container {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .circle-container {
+      width: 280px;
+      height: 280px;
+      margin-bottom: 2rem;
+    }
+
+    .gold-circle {
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-width: 10px;
+    }
+
+    .content-container {
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .circle-container {
+      width: 240px;
+      height: 240px;
+    }
+
+    .gold-circle {
+      border-width: 8px;
+    }
+
+    h2 {
+      font-size: 2.5rem !important;
+    }
+  }
+</style>

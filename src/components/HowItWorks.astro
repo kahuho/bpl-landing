@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+---
+
+<section id = "how-it-works"  class="how-it-works">
+  <h1 class="title">HOW IT WORKS</h1>
+  
+  <div class="intro-text">
+    <p>
+      At EquiSave, we connect distressed borrowers with the right investors through a simple and transparent process:
+    </p>
+    <ul>
+      <li><strong>Investor Network:</strong> We have a growing list of registered investors who've shared their interests and budgets.</li>
+      <li><strong>Present Your Case:</strong> Share your financial situation, and we'll analyze it to understand your needs.</li>
+      <li><strong>Smart Matching:</strong> We float your case to investors with similar interests, ensuring relevant offers.</li>
+      <li><strong>Receive Offers:</strong> Review offers from investors and choose the one that works best for you.</li>
+      <li><strong>Seal the Deal:</strong> Once you agree, we facilitate a secure and efficient transaction.</li>
+    </ul>
+  </div>
+  
+  <div class="cards-container">
+    <div class="card">
+      <div class="number-circle">01.</div>
+      <h2>REGISTER</h2>
+      <p>1. Registration & Verification Both borrowers and investors register on the platform and undergo a verification process to ensure authenticity.</p>
+    </div>
+    
+    <div class="card dark">
+      <div class="number-circle">02.</div>
+      <h2>LIST OR BROWSE ASSETS</h2>
+      <p>2. Asset Listing Borrowers post their assets, which are thoroughly searched and verified before being made available to investors. 3. Asset Browsing Investors browse assets that match their preferences, price range, and investment goals.</p>
+    </div>
+    
+    <div class="card">
+      <div class="number-circle">03.</div>
+      <h2>NEGOTIATE AND CLOSE DEALS</h2>
+      <p>4. Bidding & Transaction Interested investors place bids on assets. Once a bid is accepted, the transaction is facilitated after a 3% transaction fee is paid.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background-color: #f8f4d9;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 4rem;
+    color: #1a472a;
+    margin-bottom: 3rem;
+    font-weight: bold;
+  }
+  
+  .intro-text {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    text-align: left;
+  }
+  
+  .intro-text p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .intro-text ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .intro-text li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background-color: #d0bb74;
+    padding: 2rem;
+    flex: 1;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card.dark {
+    background-color: #1a472a;
+    color: white;
+  }
+  
+  .number-circle {
+    background-color: #f8f4d9;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 40px);
+  }
+  
+  .card h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .card.dark h2 {
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+    }
+    
+    .title {
+      font-size: 3rem;
+    }
+  }
+</style>

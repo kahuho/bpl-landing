@@ -1,0 +1,158 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import CEO from "../assets/director.jpg";
+import CTO from "../assets/cto.jpg";
+import CFO from "../assets/cfo.jpg";
+
+// Team member data - replace with actual team information
+const teamMembers = [
+  {
+    name: "Carol Mwai",
+    position: "CEO & Founder",
+    bio: "With over 15 years in financial services and a passion for economic empowerment in Kenya, Carol leads EquiSave's mission to transform financial distress into opportunity.",
+    image: CEO
+  },
+  {
+    name: "Carol",
+    position: "Chief Financial Officer",
+    bio: "Carol brings extensive experience in investment banking and asset management, ensuring EquiSave maintains the highest standards of financial integrity and investor trust.",
+    image: CFO // Replace with actual CFO image import
+  },
+  {
+    name: "Brian Kahuho",
+    position: "Head of Technology",
+    bio: "A tech innovator with expertise in web solutions, Brian leads the development of EquiSave's secure and transparent digital platform connecting borrowers and investors.",
+    image: CTO // Replace with actual CTO image import
+  }
+];
+---
+
+<section id="team" class="py-16 bg-cream">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-green mb-12 text-center">OUR TEAM</h2>
+    
+    <p class="text-lg text-gray-800 text-center max-w-4xl mx-auto mb-16">
+      Our dedicated team combines expertise in finance, technology, and customer service to bring innovative solutions to Kenya's financial ecosystem. With diverse backgrounds and a shared commitment to financial inclusion, we're driving positive change for borrowers and investors alike.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      {teamMembers.map((member) => (
+        <div class="team-member">
+          <div class="member-image-container">
+            <div class="green-semicircle"></div>
+            <div class="gold-circle">
+              <Image 
+                src={member.image} 
+                alt={`${member.name}, ${member.position}`} 
+                class="circle-image"
+                width={300}
+                height={300}
+                format="webp"
+                quality={90}
+              />
+            </div>
+          </div>
+          <div class="member-info text-center mt-6">
+            <h3 class="text-2xl font-bold text-dark-green">{member.name}</h3>
+            <p class="text-lg font-medium text-gold mb-4">{member.position}</p>
+            <p class="text-gray-800">{member.bio}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Background color */
+  .bg-cream {
+    background-color: #f8f4d9;
+  }
+  
+  /* Text colors */
+  .text-dark-green {
+    color: #1a472a;
+  }
+  
+  .text-gold {
+    color: #c9b870;
+  }
+  
+  /* Team member styling */
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .member-image-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+  
+  /* Green semicircle on the left */
+  .green-semicircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #1a472a; /* Dark green */
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    z-index: 1;
+  }
+  
+  /* Gold circle with white interior */
+  .gold-circle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 12px solid #e6d69c; /* Gold/cream border */
+    background-color: white;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    .member-image-container {
+      width: 180px;
+      height: 180px;
+    }
+    
+    .gold-circle {
+      border-width: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .member-image-container {
+      width: 160px;
+      height: 160px;
+    }
+    
+    .gold-circle {
+      border-width: 8px;
+    }
+    
+    h2 {
+      font-size: 2.5rem !important;
+    }
+  }
+</style>
